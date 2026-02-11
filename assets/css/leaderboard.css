@@ -16,37 +16,72 @@ leaderboard.css
 Leaderboard styles
 */
 
+.leaderboard-section h2, 
+.profile-section h2 {
+  color: var(--secondary-orange);
+  font-family: 'Fredoka', cursive;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 12px 0;
+  text-align: center;
+  border-bottom: 2px solid var(--green-primary);
+  padding-bottom: 8px;
+  letter-spacing: 0.5px;
+}
 
+#leaderboard-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-.leaderboard-section h2, .profile-section h2 {
-    color: #d35400;
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-align: center;
-    border-bottom: 2px solid #27ae60;
-    padding-bottom: 5px;
-  }
-  
-  #leaderboard-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  #leaderboard-list li {
-    padding: 5px;
-    margin-bottom: 5px;
-    background-color: rgba(39, 174, 96, 0.2);
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  #leaderboard-list li:nth-child(even) {
-    background-color: rgba(39, 174, 96, 0.3);
-  }
-  
-  #leaderboard-list li:first-child {
-    background-color: rgba(255, 215, 0, 0.3);
-    border: 1px solid gold;
-  }
+#leaderboard-list li {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  border: 1px solid #E0E0E0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+#leaderboard-list li:nth-child(even) {
+  background: #F8F8F8;
+}
+
+#leaderboard-list li:first-child {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFEFCC 100%);
+  border: 2px solid #FFD700;
+  font-weight: 600;
+}
+
+#leaderboard-list li span:first-child {
+  font-weight: 500;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#leaderboard-list li span:last-child {
+  font-family: 'Fredoka', cursive;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--green-dark);
+  background: rgba(107, 207, 127, 0.15);
+  padding: 4px 10px;
+  border-radius: 12px;
+  min-width: 45px;
+  text-align: center;
+}
+
+/* Player highlight */
+#leaderboard-list li[style*="bold"] {
+  background: linear-gradient(135deg, #FFF0E6 0%, #FFE8D9 100%) !important;
+  border: 2px solid var(--secondary-orange);
+  font-weight: 600;
+}

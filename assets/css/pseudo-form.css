@@ -16,84 +16,102 @@ pseudo-form.css
 Pseudo form styles
 */
 
-
-
 #pseudoForm {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.85);
-    color: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(39, 174, 96, 0.6);
-    z-index: 1000;
-    display: none;
-    max-width: 90vw;
-    width: 400px;
-    transition: all 0.3s ease;
-  }
-  
-  #pseudoForm label {
-    font-size: 25px;
-    margin-bottom: 20px;
-    color: white;
-    font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  .input-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-  }
-  
-  #pseudoForm input[type="text"] {
-    padding: 12px 15px;
-    font-size: 1rem;
-    border: 2px solid #27ae60;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 250px;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #333;
-    outline: none;
-    transition: all 0.3s ease;
-  }
-  
-  #pseudoForm input[type="text"]:focus {
-    border-color: #219653;
-    box-shadow: 0 0 8px rgba(39, 174, 96, 0.6);
-    background-color: white;
-  }
-  
-  #submitPseudo {
-    padding: 12px 25px;
-    font-size: 1rem;
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  #submitPseudo:hover {
-    background-color: #219653;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  #submitPseudo:active {
-    background-color: #1e8449;
-    transform: translateY(1px);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  }
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--text-dark);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+  max-width: 90vw;
+  width: 420px;
+  border: 2px solid #E0E0E0;
+  border-top: 4px solid var(--green-primary);
+}
+
+#pseudoForm label {
+  font-family: 'Fredoka', cursive;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  margin-bottom: 20px;
+  display: block;
+  color: var(--text-dark);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+#pseudoForm input[type="text"] {
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid var(--green-primary);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 320px;
+  background: #FFFFFF;
+  color: var(--text-dark);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+#pseudoForm input[type="text"]:focus {
+  border-color: var(--green-dark);
+  box-shadow: 0 0 0 3px rgba(107, 207, 127, 0.2);
+}
+
+#pseudoForm input[type="text"]::placeholder {
+  color: rgba(45, 52, 54, 0.5);
+  font-style: italic;
+}
+
+#submitPseudo {
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-family: 'Fredoka', cursive;
+  font-weight: 600;
+  background: var(--green-primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(107, 207, 127, 0.3);
+}
+
+#submitPseudo:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(107, 207, 127, 0.4);
+}
+
+#submitPseudo:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(107, 207, 127, 0.3);
+}
+
+/* Backdrop when form is shown */
+#pseudoForm[style*="block"]::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: -2;
+}

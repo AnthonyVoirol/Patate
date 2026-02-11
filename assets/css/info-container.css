@@ -16,63 +16,77 @@ info-container.css
 Info container styles
 */
 
-
-
 .info-container {
-    position: absolute;
-    right: 20px;
-    top: 0;
-    width: 220px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 15px;
-    border-radius: 10px;
-    border: 3px solid #27ae60;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-height: 600px;
-    overflow-y: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  position: relative;
+  width: 280px;
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #E0E0E0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 650px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green-primary) transparent;
+  box-shadow: var(--shadow-medium);
+}
+
+.info-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.info-container::-webkit-scrollbar-track {
+  background: #F5F5F5;
+  border-radius: 8px;
+}
+
+.info-container::-webkit-scrollbar-thumb {
+  background: var(--green-primary);
+  border-radius: 8px;
+}
+
+.score-display, 
+.leaderboard-section, 
+.profile-section {
+  background: #FAFAFA;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #E8E8E8;
+}
+
+.score-display {
+  text-align: center;
+  border: 2px solid var(--secondary-orange);
+  background: #FFF9F5;
+}
+
+.score-display h2 {
+  margin: 0 0 10px 0;
+  color: var(--secondary-orange);
+  font-family: 'Fredoka', cursive;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--primary-yellow);
+}
+
+#score {
+  font-family: 'Fredoka', cursive;
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--green-dark);
+  margin: 8px 0;
+}
+
+@media (max-width: 1000px) {
+  .info-container {
+    position: relative;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
   }
-  
-  .info-container::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .score-display, .leaderboard-section, .profile-section {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
-    border-radius: 8px;
-  }
-  
-  .score-display {
-    text-align: center;
-  }
-  
-  .score-display h2 {
-    margin-top: 0;
-    margin-bottom: 5px;
-    color: #d35400;
-    border-bottom: 2px solid #27ae60;
-    padding-bottom: 5px;
-  }
-  
-  #score {
-    font-size: 28px;
-    font-weight: bold;
-    color: #27ae60;
-    margin: 0;
-  }
-  
-  @media (max-width: 1000px) {
-    .info-container {
-      position: relative;
-      margin: 10px auto;
-      width: 80%;
-      max-width: 400px;
-      left: auto;
-      right: auto;
-    }
-  }
+}

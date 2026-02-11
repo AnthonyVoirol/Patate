@@ -16,59 +16,147 @@ profile.css
 Profile section styles
 */
 
-
-
 #profile-info p {
-    margin: 5px 0;
-  }
-  
-  #profile-controls {
-    margin-top: 10px;
-  }
-  
-  #profile-controls div {
-    margin-bottom: 10px;
-  }
-  
-  #profile-controls input {
-    width: 100%;
-    padding: 5px;
-    margin: 5px 0;
-    border: 1px solid #27ae60;
-    border-radius: 5px;
-  }
-  
-  #profile-controls button {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #profile-controls button:hover {
-    background-color: #219653;
-  }
+  margin: 6px 0;
+  font-weight: 500;
+  color: var(--text-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  border-left: 3px solid var(--green-primary);
+  font-size: 0.9rem;
+}
 
-  .warning-banner {
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeeba;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: bold;
-  }
-  
-  .warning-banner .close-btn {
-    background: none;
-    border: none;
-    color: #856404;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 0 5px;
-  }
+#profile-info p span {
+  font-family: 'Fredoka', cursive;
+  font-weight: 600;
+  color: var(--green-dark);
+  background: rgba(107, 207, 127, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+#profile-controls {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#profile-controls > div {
+  background: #FFFFFF;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+}
+
+#profile-controls label {
+  display: block;
+  font-weight: 600;
+  color: var(--secondary-orange);
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+#profile-controls input {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border: 1px solid #D0D0D0;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  background: #FFFFFF;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+#profile-controls input:focus {
+  border-color: var(--green-primary);
+  box-shadow: 0 0 0 3px rgba(107, 207, 127, 0.15);
+}
+
+#profile-controls input::placeholder {
+  color: rgba(45, 52, 54, 0.5);
+  font-style: italic;
+}
+
+#profile-controls button {
+  background: var(--green-primary);
+  color: var(--text-light);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Fredoka', cursive;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(107, 207, 127, 0.2);
+}
+
+#profile-controls button:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(107, 207, 127, 0.3);
+}
+
+#profile-controls button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(107, 207, 127, 0.2);
+}
+
+.warning-banner {
+  background: linear-gradient(135deg, #FFF3CD 0%, #FFE8B3 100%);
+  color: #856404;
+  border: 2px solid #FFEEBA;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.warning-banner .close-btn {
+  background: rgba(133, 100, 4, 0.1);
+  border: 2px solid #856404;
+  color: #856404;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.warning-banner .close-btn:hover {
+  background: #856404;
+  color: #FFF3CD;
+}
+
+#profile-status {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+#profile-status:not(:empty) {
+  border: 2px solid currentColor;
+}

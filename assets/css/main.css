@@ -16,37 +16,107 @@ main.css
 Main styles
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
 
+:root {
+  --primary-yellow: #FFD93D;
+  --secondary-orange: #FF8C42;
+  --accent-red: #FF6B6B;
+  --green-primary: #6BCF7F;
+  --green-dark: #4CAF50;
+  --blue-sky: #6EC1E4;
+  --purple-accent: #A78BFA;
+  --bg-gradient-start: #FAFAFA;
+  --bg-gradient-end: #F0F0F0;
+  --text-dark: #2D3436;
+  --text-light: #FFFFFF;
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-hard: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    background-color: #f4d03f;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  h1 {
-    color: #d35400;
-  }
-  
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-family: 'Fredoka', cursive;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--secondary-orange);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+body > p {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--text-dark);
+  margin: 8px auto;
+  max-width: 600px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  margin: 20px auto;
+  gap: 20px;
+  max-width: 1400px;
+}
+
+canvas {
+  background: linear-gradient(180deg, #87CEEB 0%, #B4E7F5 50%, #A2D9CE 100%);
+  display: block;
+  border: 4px solid var(--green-primary);
+  border-radius: 12px;
+  box-shadow: var(--shadow-hard);
+  margin: 0;
+}
+
+@media (max-width: 1000px) {
   .main-content {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
   }
   
   canvas {
-    background-color: #a2d9ce;
-    display: block;
-    border: 3px solid #27ae60;
-    margin: 0;
+    max-width: 95vw;
   }
-  
-  @media (max-width: 1000px) {
-    .main-content {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-gradient-start);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--green-primary);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-dark);
+}

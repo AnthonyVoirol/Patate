@@ -16,46 +16,97 @@ modal-screens.css
 Game over and pause modal styles
 */
 
+#gameOverScreen, 
+#pauseMenu {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--text-dark);
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border: 2px solid #E0E0E0;
+  max-width: 90vw;
+}
 
+#gameOverScreen {
+  border-top: 4px solid var(--accent-red);
+}
 
+#pauseMenu {
+  border-top: 4px solid var(--blue-sky);
+}
 
-#gameOverScreen, #pauseMenu {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    z-index: 1000;
-  }
-  
-  #gameOverScreen h1, #pauseMenu h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: white;
-  }
-  
-  #gameOverScreen p, #pauseMenu p {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
-  
-  #restartButton, #continueButton, #restartFromPauseButton, #skipPseudo {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px;
-  }
-  
-  #restartButton:hover, #continueButton:hover, #restartFromPauseButton:hover, #skipPseudo:hover {
-    background-color: #45a049;
-  }
+#gameOverScreen h1, 
+#pauseMenu h1 {
+  font-family: 'Fredoka', cursive;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 20px;
+  color: var(--text-dark);
+  letter-spacing: 1px;
+}
+
+#gameOverScreen h1 {
+  color: var(--accent-red);
+}
+
+#pauseMenu h1 {
+  color: var(--blue-sky);
+}
+
+#gameOverScreen p, 
+#pauseMenu p {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+#gameOverScreen p span,
+#pauseMenu p span {
+  font-family: 'Fredoka', cursive;
+  font-weight: 700;
+  font-size: 1.4em;
+  color: var(--green-dark);
+}
+
+#restartButton, 
+#continueButton, 
+#restartFromPauseButton, 
+#skipPseudo {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-family: 'Fredoka', cursive;
+  font-weight: 600;
+  background: var(--green-primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(107, 207, 127, 0.3);
+  letter-spacing: 0.5px;
+}
+
+#restartButton:hover, 
+#continueButton:hover, 
+#restartFromPauseButton:hover, 
+#skipPseudo:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(107, 207, 127, 0.4);
+}
+
+#restartButton:active, 
+#continueButton:active, 
+#restartFromPauseButton:active, 
+#skipPseudo:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(107, 207, 127, 0.3);
+}

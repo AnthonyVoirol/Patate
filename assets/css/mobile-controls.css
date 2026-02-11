@@ -1,0 +1,170 @@
+/*
+
+'||''|.   ..|''||   |''||''|     |     |''||''|  ..|''||   
+ ||   || .|'    ||     ||       |||       ||    .|'    ||  
+ ||...|' ||      ||    ||      |  ||      ||    ||      || 
+ ||      '|.     ||    ||     .''''|.     ||    '|.     || 
+.||.      ''|...|'    .||.   .|.  .||.   .||.    ''|...|'  
+                                                           
+                                                           
+POTATO.THESERVER.LIFE
+LICENSE GPL-3.0
+
+-------------------------------
+mobile-controls.css
+-
+Styles for mobile controls UI
+*/
+
+/* Persistent control toggle button */
+#mobileControlTogglePersistent {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10000;
+    padding: 12px 20px;
+    border: 3px solid #6BCF7F;
+    background: rgba(107, 207, 127, 0.9);
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#mobileControlTogglePersistent:active {
+    transform: scale(0.95);
+}
+
+#mobileControlTogglePersistent.gyro-mode {
+    border-color: #FF6B6B;
+    background: rgba(255, 107, 107, 0.9);
+}
+
+/* Touch zone indicators */
+#touchZoneIndicators {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+}
+
+#leftTouchZone,
+#rightTouchZone {
+    flex: 1;
+    transition: background-color 0.2s;
+}
+
+#leftTouchZone {
+    border-right: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+#leftTouchZone.active {
+    background-color: rgba(107, 207, 127, 0.2);
+}
+
+#rightTouchZone.active {
+    background-color: rgba(107, 207, 127, 0.2);
+}
+
+/* Pause menu controls */
+#mobileControlToggle {
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+#mobileControlToggle > div:first-child {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #fff;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#touchModeButton,
+#gyroModeButton {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+#touchModeButton {
+    border-color: #6BCF7F;
+    background: rgba(107, 207, 127, 0.2);
+}
+
+#touchModeButton.active {
+    background: #6BCF7F;
+}
+
+#gyroModeButton {
+    border-color: #FF6B6B;
+    background: rgba(255, 107, 107, 0.2);
+}
+
+#gyroModeButton.active {
+    background: #FF6B6B;
+}
+
+#calibrateGyroButton {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 15px;
+    border: 2px solid #FFD93D;
+    background: rgba(255, 217, 61, 0.3);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 12px;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+    #mobileControlTogglePersistent {
+        top: 8px;
+        right: 8px;
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Ensure button is above all game elements */
+body {
+    position: relative;
+}
+
+/* Animation for button feedback */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+#mobileControlTogglePersistent:hover {
+    animation: pulse 0.5s ease-in-out;
+}
