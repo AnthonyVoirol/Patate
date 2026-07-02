@@ -10,4 +10,4 @@ Idk it's hosted on [potato.theserver.life](https://potato.theserver.life)
 - Added accounts flag feature
 
 ---
-Made by oldwalor, douxx
+Made by anthonyvoirol, douxx
